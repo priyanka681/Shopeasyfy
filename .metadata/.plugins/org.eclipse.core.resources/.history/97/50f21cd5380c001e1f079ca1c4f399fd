@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Categories - Shopme Admin', 'none')" />
+
+<body>
+<div class="container-fluid">
+
+	<div ></div>
+	<div>
+		<h2>Manage Categories</h2>	
+		
+		<a></a>
+		<a ></a>
+			<div th:replace="fragments :: search_form_and_message" />
+		
+				
+	</div>
+		
+	<div  />
+	
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Category Image</th>
+				<th th:replace="fragments :: column_link('name', 'Category Name', 'none')" />						
+					<th />						
+					<th class="hideable-column">Alias</th>
+					<th>Enabled</th>
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr >
+					<td></td>
+					<td>
+						<img />
+					</td>
+					<td></td>
+					<td class="hideable-column"></td>
+					<td>
+					
+						<div />
+					</td>
+					<td>
+						<div  />
+						&nbsp; 
+						<div  />						
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="less-details">
+		<div >
+			<div class="col-4">
+				<img />			
+			</div>
+			<div class="col-8">
+				<div></div>
+				<div class="mt-2">
+					<div />
+					&nbsp; 			
+					<div/>
+					&nbsp;
+					<div />
+				</div>
+			</div>
+			<div>&nbsp;</div>
+		</div>	
+	</div>
+		
+	<div >
+		<span>Search result does not show categories in hierarchical form</span>
+		<div ></div>
+	</div>
+	
+	
+	<div ></div>
+	</div>
+	
+	<div  />
+	
+	<div></div>
+	
+	</div>
+	
+	<div th:replace="modal_fragments :: confirm_modal" />
+	
+	<div th:replace="fragments :: footer"></div>
+	
+	
+</div>
+<script ></script>
+<script type="text/javascript">
+	moduleURL = "[[@{/categories}]]";
+
+	$(document).ready(function() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'category');
+		});
+	});
+</script>
+</body>
+</html>

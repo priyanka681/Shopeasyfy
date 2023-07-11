@@ -1,0 +1,30 @@
+package com.shopeasyfy.admin.setting;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.shopeasyfy.entity.Setting;
+
+@Controller
+public class SettingController {
+
+	
+	 @Autowired private SettingService service;
+	 
+	 @Autowired private CurrencyRepository currencyrepo;
+	 
+	 @GetMapping("/settings")
+	 public String listAllString(Model model)  {
+		 
+		 List<Setting> listSetting = service.listAllSettings();
+		 return "settings/settings";
+		 
+		 
+	 }
+	 
+	 
+}

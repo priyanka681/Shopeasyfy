@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ShopeasyfyWebParent/ShopeasyfyBackEnd/src/main/resources/templates/categories.html.txt&apos; to &apos;categories.html&apos;" description="Rename resource &apos;categories.html.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ShopeasyfyBackEnd/src/main/resources/templates/categories.html.txt" name="categories.html" stamp="1686894331876" updateReferences="true"/>
+</session>

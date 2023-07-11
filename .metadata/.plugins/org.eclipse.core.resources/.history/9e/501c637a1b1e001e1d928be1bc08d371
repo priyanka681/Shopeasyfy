@@ -1,0 +1,11 @@
+package com.shopeasyfy.admin.brand;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import com.shopeasyfy.entity.Brand;
+
+public interface BrandRepository extends PagingAndSortingRepository<Brand, Integer> {
+
+	
+	
+}

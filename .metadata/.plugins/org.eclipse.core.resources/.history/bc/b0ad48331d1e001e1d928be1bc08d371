@@ -1,0 +1,16 @@
+package com.shopeasyfy.admin.brand;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import com.shopeasyfy.entity.Brand;
+import com.shopeasyfy.entity.Category;
+
+public interface BrandRepository extends PagingAndSortingRepository<Brand, Integer> {
+
+	
+public Long countById(Integer id);
+	
+	public Category findByName(String name);
+	
+	public Category findByAlias(String alias);
+}

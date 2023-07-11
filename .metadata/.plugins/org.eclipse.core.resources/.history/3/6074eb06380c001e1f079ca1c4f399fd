@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container-fluid">
+	<!--  <div th:replace="navigation :: menu"></div> -->
+	<div>
+		<h2>Manage Orders</h2>	
+	</div>
+		
+	<div th:replace="fragments :: search_form_and_message" />
+	
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					
+					<th class="hideable-column">
+					</th>
+					
+					<th class="hideable-column">
+					</th>
+					
+					<th class="hideable-column">
+					</th>
+					
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>
+						<a class="linkCustomerDetail" href="">
+						shivata
+						</a>
+					</td>
+					<td>
+						<div</div>
+					</td>
+					<td>
+					</td>
+					<td class="hideable-column">1</td>
+					<td class="hideable-column">2</td>
+					<td class="hideable-column">3</td>
+
+					<td>
+						<a class="fas fa-file-alt fa-2x icon-green linkOrderDetail"
+							
+							title="View details of this order"
+							></a>					
+						&nbsp; 
+						&nbsp; 
+						<div />						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="less-details">
+		
+		<div class="row m-1">
+			<div class="col-2">
+			
+			</div>
+			<div class="col-10">
+				<div></div>
+				<div><small></small></div>
+				<div><div>Total</div></div>
+				<div>
+					<a class="fas fa-file-alt fa-2x icon-green linkOrderDetail"
+						
+						title="View details of this order"
+						></a>					
+					&nbsp; 
+					&nbsp; 
+					<div />				
+				</div>
+			</div>
+		</div>
+		<div>&nbsp;</div>
+	
+	</div>	
+	
+	
+	<div th:replace="modal_fragments :: confirm_modal"></div>
+	
+	<div class="modal fade" id="customerDetailModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="orderDetailModal">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
+		
+	<div th:replace="fragments :: footer"></div>
+	
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+	moduleURL = "[[@{/orders}]]";
+
+	$(document).ready(function() {
+		handleLinkViewCustomerDetails();
+		handleLinkViewOrderDetails();
+		handleLinkDeleteOrder();		
+	});
+	
+	function handleLinkDeleteOrder() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'order');
+		});		
+	}
+	
+	function handleLinkViewCustomerDetails() {
+		$(".linkCustomerDetail").on("click", function(e) {
+			e.preventDefault();
+			linkDetailURL = $(this).attr("href");
+			$("#customerDetailModal").modal("show").find(".modal-content").load(linkDetailURL);
+		});			
+	}
+	
+	function handleLinkViewOrderDetails() {
+		$(".linkOrderDetail").on("click", function(e) {
+			e.preventDefault();
+			linkDetailURL = $(this).attr("href");
+			$("#orderDetailModal").modal("show").find(".modal-content").load(linkDetailURL);
+		});		
+	}
+</script>
+</body>
+</html>

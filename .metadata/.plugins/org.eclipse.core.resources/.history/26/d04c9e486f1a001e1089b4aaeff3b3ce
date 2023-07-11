@@ -1,0 +1,13 @@
+package com.shopeasyfy.admin.setting;
+
+import org.springframework.data.repository.CrudRepository;
+
+
+import com.shopeasyfy.entity.Currency;
+
+
+public interface CurrencyRepository extends CrudRepository<Currency, Integer> {
+
+	
+	
+}

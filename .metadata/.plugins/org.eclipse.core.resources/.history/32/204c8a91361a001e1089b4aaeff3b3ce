@@ -1,0 +1,12 @@
+package com.shopeasyfy.admin.setting;
+
+import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+@
+public class SettingRepositoryTests {
+
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Customers - Shopeasyfy Admin', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Customers</h2>	
+		
+		<a href='/customers/export/csv' class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
+	</div>
+		
+	<div th:replace="fragments :: search_form_and_message" />
+	
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					<th th:replace="fragments :: column_link('id', 'ID', 'none')" />
+					<th th:replace="fragments :: column_link('firstName', 'First Name', 'none')" />
+					<th th:replace="fragments :: column_link('lastName', 'Last Name', 'none')" />
+					
+					<th class="hideable-column">
+					<th th:replace="fragments :: column_link('email', 'E-mail', 'tag')" />
+					</th>
+					
+					<th class="hideable-column">
+					<th th:replace="fragments :: column_link('city', 'City', 'tag')" />
+					</th>
+					
+					<th class="hideable-column">
+					<th th:replace="fragments :: column_link('state', 'State', 'tag')" />
+					</th>
+					
+					<th th:replace="fragments :: column_link('country', 'Country', 'none')" />
+					<th th:replace="fragments :: column_link('enabled', 'Enabled', 'none')" />
+					<th></th>
+				</tr>								
+			</thead>
+			<tbody>
+				<tr>
+					<td>shivata</td>
+					<td>priya</td>
+					<td>drishti</td>
+					<td class="hideable-column">Ronisha</td>
+					
+					<td>
+					</td>
+					<td>
+						<a class="fas fa-file-alt fa-2x icon-green link-detail"
+						   href='/customers/detail/' 
+							title="View details of this customer"
+							></a>					
+						 
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="less-details">
+		<div  class="row m-1">
+			<div class="col-4">
+				<span><b>Priya</b></span>
+			</div>
+			<div class="col-8">
+				<div class="mb-1">
+					<span>Uk</span>
+				</div>
+				<div>
+					
+					<a class="fas fa-file-alt fa-2x icon-green link-detail"
+						href='/customers/detail/' 
+						title="View details of this customer"
+						></a>					
+					&nbsp; 
+					&nbsp; 
+				</div>
+			</div>
+			<div>&nbsp;</div>
+		</div>	
+	</div>		
+	
+	
+	<div th:replace="modal_fragments :: confirm_modal" />
+	
+	<div class="modal fade" id="detailModal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>	
+	
+	<div th:replace="fragments :: footer"></div>
+	
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+	moduleURL = "[[@{/customers}]]";
+
+	$(document).ready(function() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'customer');
+		});
+		
+		$(".link-detail").on("click", function(e) {
+			e.preventDefault();
+			linkDetailURL = $(this).attr("href");
+			$("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
+		});		
+	});
+</script>
+</body>
+</html>

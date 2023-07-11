@@ -1,0 +1,31 @@
+package com.shopeasyfy.admin;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@Controller
+public class MainController{
+
+	 @GetMapping("/home")
+	 public String viewHomePage() {
+		 return "index";
+	 }
+	 
+	 @GetMapping("/login")
+	 public String viewLoginPage() {
+		 Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//		 
+//			 
+		 if(auth.getName().equals("anonymousUser")) {
+			 return "login";
+		 }
+		 
+		 return "redirect:/home";
+	 }
+	 @GetMapping("/categories/new")
+	 public String getCategory() {
+	 return "categories";}
+}

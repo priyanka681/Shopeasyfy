@@ -1,0 +1,32 @@
+package com.shopeasyfy.admin.setting;
+
+import java.util.List;
+
+import org.assertj.core.util.Arrays;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.Rollback;
+
+import com.shopeasyfy.entity.Currency;
+
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE )
+@Rollback(false)
+public class CurrencyRepositoryTests {
+
+	
+	private CurrencyRepository repo;
+	
+	@Test
+	public void testCreateCurrencies() {
+		List<Currency> listCurrencies = Arrays.asList(
+				new Currency("Nepal Nepalese Rupee", "RS", "NPR"),
+				new Currency("Indian Rupee", "", "INR")
+				);
+		
+		repo.saveAll(listCurrencies);
+		
+	}
+}

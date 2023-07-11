@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+
+<title>Login System Admin</title>
+
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+ <!--   <style>
+#error{
+
+color:red;
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid text-center">
+<div>
+        
+        <img th:src="@{/images/logo1.jpg}" alt="Logo">
+      </div>  -->
+      
+      <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      max-width: 800px;
+    }
+
+    .logo {
+      margin-right: 20px;
+    }
+
+    #error {
+      color: red;
+    }
+    
+     </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="/images/logo1.jpg" alt="Logo">
+    </div>
+      
+      <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto">
+      <div id="error" th:if="${param.error}">
+       
+        Invalid Username and password!!
+      
+      </div>
+      
+      <div th:if="${param.logout}">
+      <p class="text-warning"> You have been logged out. </p>
+      
+      
+      </div>
+      
+        <div class="border border-secondary rounded p-3">
+           <p>Shopeasyfy Admin Panel</p>
+           <p>
+             <input type="email" name="email" class="form-control" placeholder="E-mail" required />
+           </p>
+           <p>
+             <input type="password" name="password" class="form-control" placeholder="Password" required />
+           </p>
+           <p>
+             <input type = "submit" value="Login" class="btn btn-primary">
+           </p>
+        </div>
+      
+      
+      </form>
+      
+      <div>
+          <p>Shopeasyfy Control Panel - Copyright &copy; Shopeasyfy</p>
+      </div>
+
+</div>
+    
+
+</body>
+</html>

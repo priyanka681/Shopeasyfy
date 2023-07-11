@@ -1,0 +1,5 @@
+package com.shopeasyfy.admin.category;
+
+public class CategoryRepositoryTests {
+
+}

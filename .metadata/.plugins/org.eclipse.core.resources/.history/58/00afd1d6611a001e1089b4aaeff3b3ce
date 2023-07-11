@@ -1,0 +1,5 @@
+package com.shopeasyfy.admin.setting;
+
+public class SettingController {
+
+}

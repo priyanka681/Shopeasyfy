@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ShopeasyfyFrontEnd&apos; to &apos;HELP.md&apos;&#x0D;&#x0A;- Original project: &apos;ShopeasyfyWebParent&apos;&#x0D;&#x0A;- Destination element: &apos;HELP.md&apos;&#x0D;&#x0A;- Original element: &apos;ShopeasyfyFrontEnd&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move folder" element1="ShopeasyfyFrontEnd" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1688553100603" target="ShopeasyfyBackEnd/HELP.md" units="0" version="1.0"/>
+</session>
